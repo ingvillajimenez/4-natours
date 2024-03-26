@@ -45,40 +45,40 @@ app.options('*', cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
-// app.use(helmet());
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'", 'data:', 'blob:'],
+app.use(helmet());
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'", 'data:', 'blob:'],
 
-      baseUri: ["'self'"],
+//       baseUri: ["'self'"],
 
-      fontSrc: ["'self'", 'https:', 'data:'],
+//       fontSrc: ["'self'", 'https:', 'data:'],
 
-      scriptSrc: ["'self'", 'https://*.cloudflare.com'],
+//       scriptSrc: ["'self'", 'https://*.cloudflare.com'],
 
-      scriptSrc: ["'self'", 'https://*.stripe.com'],
+//       scriptSrc: ["'self'", 'https://*.stripe.com'],
 
-      scriptSrc: ["'self'", 'http:', 'https://*.mapbox.com', 'data:'],
+//       scriptSrc: ["'self'", 'http:', 'https://*.mapbox.com', 'data:'],
 
-      frameSrc: ["'self'", 'https://*.stripe.com'],
+//       frameSrc: ["'self'", 'https://*.stripe.com'],
 
-      objectSrc: ["'none'"],
+//       objectSrc: ["'none'"],
 
-      styleSrc: ["'self'", 'https:', 'unsafe-inline'],
+//       styleSrc: ["'self'", 'https:', 'unsafe-inline'],
 
-      workerSrc: ["'self'", 'data:', 'blob:'],
+//       workerSrc: ["'self'", 'data:', 'blob:'],
 
-      childSrc: ["'self'", 'blob:'],
+//       childSrc: ["'self'", 'blob:'],
 
-      imgSrc: ["'self'", 'data:', 'blob:'],
+//       imgSrc: ["'self'", 'data:', 'blob:'],
 
-      connectSrc: ["'self'", 'blob:', 'https://*.mapbox.com'],
+//       connectSrc: ["'self'", 'blob:', 'https://*.mapbox.com'],
 
-      upgradeInsecureRequests: [],
-    },
-  }),
-);
+//       upgradeInsecureRequests: [],
+//     },
+//   }),
+// );
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
